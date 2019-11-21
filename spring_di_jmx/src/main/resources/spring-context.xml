@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="userDao" class="spring_di_test.dao.UserServiceDAO"/>
+    <bean name="userDao1" class="spring_di_test.dao.UserServiceDAO"/>
+    <bean name="userServiceDAO" class="spring_di_test.dao.UserServiceDAO"/>
+
+    <!--inject using set method-->
+    <bean name="userService" class="spring_di_test.service.UserService">
+        <property name="userServiceDAO" ref="userDao"/>
+    </bean>
+
+    <!--inject with the help of constructor-->
+    <bean name="userService1" class="spring_di_test.service.UserService">
+        <constructor-arg index="0" ref="userDao"/>
+    </bean>
+
+    <!--inject with the help aurowire-->
+    <!--<bean name="userService2" class="spring_di_test.service.UserService" autowire="byType"/>-->
+    <bean name="userService2" class="spring_di_test.service.UserService" autowire="byName"/>
+</beans>

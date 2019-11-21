@@ -1,0 +1,7 @@
+create table persons(
+id int not null auto_increment primary key,
+name varchar(15)
+);
+
+insert into persons (name) values ('xxx');
+insert into persons (name) values ('yyy');

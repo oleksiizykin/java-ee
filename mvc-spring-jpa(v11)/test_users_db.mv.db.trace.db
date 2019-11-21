@@ -1,0 +1,4 @@
+2017-07-23 18:45:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "USERS" не найдена
+Table "USERS" not found; SQL statement:
+select usersentit0_.ID as ID1_0_, usersentit0_.NAME as NAME2_0_, usersentit0_.SURNAME as SURNAME3_0_ from USERS usersentit0_ [42102-193]
